@@ -1,0 +1,207 @@
+<div class="d-flex flex-column flex-root">
+    <!--begin::Page-->
+    <div class="page d-flex flex-row flex-column-fluid">
+        <!--begin::Aside-->
+        <app-sidebar></app-sidebar>
+        <!--end::Aside-->
+        <!--begin::Wrapper-->
+        <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+            <!--begin::Header-->
+            <app-topbar></app-topbar>
+            <!--end::Header-->
+            <!--begin::Content-->
+            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                <!--begin::Toolbar-->
+                <div class="toolbar" id="kt_toolbar">
+                    <!--begin::Container-->
+                    <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+                        <!--begin::Page title-->
+                        <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
+                            data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
+                            class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                            <!--begin::Title-->
+                            <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Dashboard
+                                <!--begin::Separator-->
+                                <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+                                <!--end::Separator-->
+                                <!--begin::Description-->
+
+                                <ol class="breadcrumb text-muted fs-6 fw-semibold">
+                                    <li class="breadcrumb-item pe-3">Ususarios</li>
+                                </ol>
+                                <!--end::Description-->
+                            </h1>
+                            <!--end::Title-->
+                        </div>
+                        <!--end::Page title-->
+                        <!--begin::Actions-->
+                        <div class="d-flex align-items-center py-1">
+
+                            <a href="#" class="btn btn-sm btn-primary">
+                                Create</a>
+                            <!--end::Button-->
+                        </div>
+                        <!--end::Actions-->
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <!--end::Toolbar-->
+                <!--begin::Post-->
+                <div class="post d-flex flex-column-fluid" id="kt_post">
+                    <!--begin::Container-->
+                    <div id="kt_content_container" class="container-xxl">
+
+                        <div class="row gy-5 g-xl-8">
+                            <div class="col-12">
+                                <div class="card">
+                                    <!--begin::Card body-->
+                                    <div class="card-body">
+                                        <!--begin::Stepper-->
+                                        <div class="stepper stepper-links d-flex flex-column pt-15"
+                                            id="kt_create_account_stepper" data-kt-stepper="true">
+                                            <!--begin::Nav-->
+                                            <div class="stepper-nav mb-5">
+                                                <!--begin::Step 1-->
+                                                <div (click)="setActive(1)" class="stepper-item"
+                                                    style="cursor: pointer;" [ngClass]="{'current': active == 1}">
+                                                    <h4 class="stepper-title">General</h4>
+                                                </div>
+                                                <div (click)="setActive(2)" class="stepper-item"
+                                                    style="cursor: pointer;" [ngClass]="{'current': active == 2}">
+                                                    <h4 class="stepper-title">variaciones</h4>
+                                                </div>
+
+                                            </div>
+                                            <!--end::Nav-->
+                                            <!--begin::Form-->
+                                            <div *ngIf="active == 1"
+                                                class="mx-auto mw-700px w-100 pt-15 pb-10 fv-plugins-bootstrap5 fv-plugins-framework">
+                                                <!--begin::Step 1-->
+                                                <div>
+                                                    <div class="w-100">
+                                                        <!--begin::Heading-->
+                                                        <div class="pb-10 pb-lg-15">
+                                                            <!--begin::Title-->
+                                                            <h2 class="d-flex align-items-center text-dark fw-700">
+                                                                Nuevo producto
+                                                            </h2>
+                                                            <!--end::Title-->
+                                                            <!--begin::Notice-->
+                                                            <div class="text-muted fw-semibold fs-6">
+                                                                Datos generales del nuevo producto.
+                                                            </div>
+                                                            <!--end::Notice-->
+                                                        </div>
+                                                        <!--end::Heading-->
+
+                                                        <!--begin::Input group-->
+                                                        <div class="row">
+                                                            <div class="fv-row mb-10">
+                                                                <label class="form-label required">Título</label>
+                                                                <input type="text"
+                                                                    class="form-control form-control-solid mb-2"
+                                                                    placeholder="Nombre del producto" name="titulo"
+                                                                    [(ngModel)]="producto.titulo" />
+                                                                <div class="text-muted fs-7">Se requiere un nombre de
+                                                                    producto y se recomienda que sea
+                                                                    único.</div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input group-->
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="fv-row mb-10">
+                                                                    <label class="form-label required">Categoría</label>
+
+                                                                    <select name="categoria"
+                                                                        [(ngModel)]="producto.categoria"
+                                                                        class="form-select form-select-solid mb-2"
+                                                                        id="">
+                                                                        <option value="" selected disabled>Seleccionar
+                                                                        </option>
+                                                                    </select>
+                                                                    <div class="text-muted fs-7">Lorem ipsum dolor sit
+                                                                        amet.</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="col">
+                                                                    <div class="fv-row mb-10">
+                                                                        <label
+                                                                            class="form-label required">Subcategoría</label>
+
+                                                                        <select name="subcategoria"
+                                                                            [(ngModel)]="producto.subcategoria"
+                                                                            class="form-select form-select-solid mb-2"
+                                                                            id="">
+                                                                            <option value="" selected disabled>
+                                                                                Seleccionar</option>
+                                                                        </select>
+                                                                        <div class="text-muted fs-7">Lorem ipsum dolor
+                                                                            sit
+                                                                            amet.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--begin::Input group-->
+                                                        <div class="row">
+                                                            <div class="fv-row mb-10">
+                                                                <label class="form-label required">Etiquetas</label>
+                                                                <input type="text"
+                                                                    class="form-control form-control-solid mb-2"
+                                                                    id="kt_tagify" />
+                                                                <div class="text-muted fs-7">Se requiere un nombre de
+                                                                    producto y se recomienda que sea
+                                                                    único.</div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input group-->
+                                                    </div>
+                                                </div>
+
+                                                <div class="text-center mt-10">
+                                                    <button (click)="crear()" type="button" class="btn btn-dark">
+                                                        <span class="svg-icon svg-icon-3 ms-1"><svg width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path opacity="0.3"
+                                                                    d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z"
+                                                                    fill="currentColor" />
+                                                                <path
+                                                                    d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z"
+                                                                    fill="currentColor" />
+                                                            </svg>
+                                                        </span>
+                                                        Crear
+                                                    </button>
+                                                    <button class="btn btn-dark" type="button" disabled>
+                                                        <span class="spinner-grow spinner-grow-sm" role="status"
+                                                            aria-hidden="true"></span>
+                                                        Procensando...
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                            <!--end::Form-->
+
+                                            <div *ngIf="active == 2">VARIACIONES</div>
+                                        </div>
+                                        <!--end::Stepper-->
+                                    </div>
+                                    <!--end::Card body-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <!--end::Post-->
+            </div>
+            <!--end::Content-->
+
+        </div>
+        <!--end::Wrapper-->
+    </div>
+    <!--end::Page-->
+</div>
