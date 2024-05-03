@@ -16,6 +16,9 @@
             "outputPath": "dist/panel",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "allowedCommonJsDependencies": [
+              "jquery"
+            ],
             "polyfills": [
               "zone.js"
             ],
@@ -87,7 +90,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/spectrum.css"
             ],
             "scripts": []
           }
